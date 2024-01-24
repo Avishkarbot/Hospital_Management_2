@@ -41,7 +41,7 @@ public class UserLogin extends HttpServlet
 //				request.setAttribute("errorrMsg", "Invalid user id or password");
 //				RequestDispatcher rd=request.getRequestDispatcher("user_login.jsp");
 //				rd.include(request,response);
-				session.setAttribute("errorMsg", "Invalid email or password");
+				session.setAttribute("errorUserLogin", "Invalid email or password");
 				response.sendRedirect("user_login.jsp");
 			}
 			

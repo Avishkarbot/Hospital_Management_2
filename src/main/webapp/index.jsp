@@ -14,7 +14,6 @@
 
 </head>
 <body>
-
 	<!-- navbar -->
 	<div
 		style="background: linear-gradient(to bottom left, #28b487, #2f9365);">

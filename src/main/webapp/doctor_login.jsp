@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Doctor Login</title>
 <%@include file="component/allCSS.jsp"%>
+<style>
+body {
+	overflow-y: hidden;
+}
+</style>
 </head>
 <body>
 	<div
@@ -20,16 +25,12 @@
 					<p class="fs-4 text-center">Doctor Login</p>
 
 					<div class="text-center">
-						<span style="color: red;">${succMasg}</span>
+						<span style="color: red;">${succDoctLogOut}</span>
 					</div>
-					<c:if test="${not empty succMsg }">
-						<p class="text-center text-success fs-3">${succMsg}</p>
-						<c:remove var="succMsg" scope="session" />
-					</c:if>
 
-					<c:if test="${not empty errorMsg }">
-						<p class="text-center text-danger fs-5">${errorMsg}</p>
-						<c:remove var="errorMsg" scope="session" />
+					<c:if test="${not empty errorrDoctLogin }">
+						<p class="text-center text-danger fs-5">${errorrDoctLogin}</p>
+						<c:remove var="errorrDoctLogin" scope="session" />
 					</c:if>
 					<form action="doctorLogin" method="post">
 						<div class="mb-3">
@@ -41,7 +42,8 @@
 								name="password" type="password" class="form-control">
 						</div>
 
-						<button type="submit" class="btn bg-success text-white col-md-12" style="background: linear-gradient(to top left, #28b487, #7dd56f);">Login</button>
+						<button type="submit" class="btn bg-success text-white col-md-12"
+							style="background: linear-gradient(to top left, #28b487, #7dd56f);">Login</button>
 
 					</form>
 

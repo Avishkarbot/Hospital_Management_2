@@ -37,7 +37,7 @@ public class DoctorLogin extends HttpServlet {
 			} else {
 
 				System.out.println("Invalid user id or password");
-				request.setAttribute("errorrMsg", "Invalid user id or password");
+				request.setAttribute("errorrDoctLogin", "Invalid user id or password");
 				RequestDispatcher rd = request.getRequestDispatcher("doctor_login.jsp");
 				rd.include(request, response);
 			}

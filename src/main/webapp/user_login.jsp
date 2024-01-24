@@ -8,27 +8,35 @@
 <meta charset="UTF-8">
 <title>User Login</title>
 <%@include file="component/allCSS.jsp"%>
+
+<style>
+body {
+	overflow-y: hidden;
+}
+</style>
 </head>
+
 <body>
 	<div
 		style="background: linear-gradient(to top left, #28b487, #7dd56f);"><%@include
 			file="component/navbar.jsp"%></div>
 
 
-	
+
 	<!-- Form -->
 	<div class="container p-5 ">
 		<div class="row">
 			<div class="col-md-4 offset-md-4 form-1">
 				<div class="card-body">
 					<p class="fs-4 text-center">User Login</p>
-					<c:if test="${not empty succMsg }">
-						<p class="text-center text-success fs-3">${succMsg}</p>
-						<c:remove var="succMsg" scope="session" />
+
+					<c:if test="${not empty errorUserLogin }">
+						<p class="text-center text-danger fs-5">${errorUserLogin}</p>
+						<c:remove var="errorMsg" scope="session" />
 					</c:if>
 
-					<c:if test="${not empty errorMsg }">
-						<p class="text-center text-danger fs-5">${errorMsg}</p>
+					<c:if test="${empty succUserLogout }">
+						<p class="text-center text-success fs-5">${succUserLogout}</p>
 						<c:remove var="errorMsg" scope="session" />
 					</c:if>
 					<form action="userLogin" method="post">
@@ -40,7 +48,8 @@
 							<label class="form-label">Password</label> <input required
 								name="password" type="password" class="form-control">
 						</div>
-						<button type="submit" class="btn bg-success text-white col-md-12" style="background: linear-gradient(to top left, #28b487, #7dd56f);">Login</button>
+						<button type="submit" class="btn bg-success text-white col-md-12"
+							style="background: linear-gradient(to top left, #28b487, #7dd56f);">Login</button>
 
 					</form>
 					<br>Don't have account?<a href="signup.jsp"

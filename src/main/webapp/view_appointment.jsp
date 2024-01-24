@@ -53,7 +53,7 @@
 					%>
 					<tr>
 						<th><%=ap.getFullName()%></th>
-						<td><%=ap.getGender()%></td>
+						<td><%=ap.getGender() %></td>
 						<td><%=ap.getAge()%></td>
 						<td><%=ap.getAppoinDate()%></td>
 						<td><%=ap.getDiseases()%></td>

@@ -1,5 +1,9 @@
+<%@page import="com.db.DBconnect"%>
+<%@page import="com.dao.DoctorDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +11,14 @@
 <title>Insert title here</title>
 <%@include file="../component/allCSS.jsp"%>
 <%@include file="../component/adminindexCSS.jsp"%>
+<style>
+	.specialist-card{
+		border:4px solid #ffbd03;
+	}
+</style>
 </head>
 <body>
+	<%DoctorDao dao = new DoctorDao(DBconnect.getConn()); %>
 	<div
 		style="background: linear-gradient(to top left, #28b487, #7dd56f);"><%@include
 			file="navbar.jsp"%></div>
@@ -24,31 +34,33 @@
 	<div class="text-center">
 		<span style="color: green;">${specError}</span>
 	</div>
-
+	
+	
+	
 	<div class="container container-1">
 		<div class="row d-flex justify-content-around ">
 			<div class="cards col-3 text-center">
 				<i class="fa-solid fa-user-doctor fa-3x" style="color: #fff;"></i> <br>
 				<h5>Doctor</h5>
-				<p>109</p>
+				<p><%dao.countDoctor();%></p>
 			</div>
 			<div class="cards col-3 text-center">
 				<i class="fa-solid fa-users fa-3x" style="color: #fff;"></i>
 				<h5>Users</h5>
-				<p>408</p>
+				<p><%dao.countUser();%></p>
 			</div>
 		</div>
 		<div class="row d-flex justify-content-around">
 			<div class="cards col-3 text-center">
 				<i class="fa-solid fa-calendar-check fa-3x" style="color: #fff;"></i>
 				<h5>Total Appointment</h5>
-				<p>906</p>
+				<p><%dao.countAppointment();%></p>
 			</div>
 			<div class="cards specialist-card col-3 text-center"
 				data-bs-toggle="modal" data-bs-target="#exampleModal">
 				<i class="fa-solid fa-notes-medical fa-3x" style="color: #fff;"></i>
 				<h5>Specialist</h5>
-				<p>40</p>
+				<p><%dao.countSpecialist();%></p>
 			</div>
 		</div>
 	</div>

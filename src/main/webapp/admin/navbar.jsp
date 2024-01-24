@@ -23,7 +23,8 @@
 			<form action="" class="d-flex">
 				<div class="dropdown">
 					<button class="btn btn-light dropdown-toggle" type="button"
-						data-bs-toggle="dropdown" aria-expanded="false">Admin</button>
+						data-bs-toggle="dropdown" aria-expanded="false"><i
+							class="fas fa-sign-in-alt fw-bold"></i> Admin</button>
 					<ul class="dropdown-menu adminLog-out">
 						<li><a class="dropdown-item" href="../adminLogout">Log out</a></li>
 

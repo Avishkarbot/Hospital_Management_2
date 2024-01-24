@@ -8,6 +8,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@include file="component/allCSS.jsp"%>
+<style>
+	body{
+	overflow-y:hidden;
+	}
+</style>
 </head>
 <body>
 	<!-- navbar -->

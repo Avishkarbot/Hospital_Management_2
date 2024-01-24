@@ -25,13 +25,13 @@
 
 
 	<div class="container p-3">
-		<p class="fs-3 text-center">Patient Details</p>
-		<c:if test="${not empty errorMsg}">
-			<p class="fs-4 text-center text-danger">${errorMsg}</p>
+		<p class="fs-3 text-center admin-heading">Patient Details</p>
+		<c:if test="${not empty errorStatus}">
+			<p class="fs-4 text-center text-danger">${errorStatus}</p>
 			<c:remove var="errorMsg" scope="session" />
 		</c:if>
-		<c:if test="${not empty succMsg}">
-			<p class=" fs-4 text-center text-success">${succMsg}</p>
+		<c:if test="${not empty succStatus}">
+			<p class=" fs-4 text-center text-success">${succStatus}</p>
 			<c:remove var="succMsg" scope="session" />
 		</c:if>
 

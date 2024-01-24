@@ -13,11 +13,22 @@
 
 <%@include file="../component/allCSS.jsp"%>
 <%@include file="../component/adminindexCSS.jsp"%>
+
+<style>
+body {
+	overflow-y: hidden;
+}
+</style>
 </head>
 <body>
+	<%
+	Doctor d = (Doctor) session.getAttribute("doctObj");
+	DoctorDao dao = new DoctorDao(DBconnect.getConn());
+	%>
 	<c:if test="${empty doctObj}">
 		<c:redirect url="../doctor_login.jsp"></c:redirect>
 	</c:if>
+
 	<div
 		style="background: linear-gradient(to top left, #28b487, #7dd56f);"><%@include
 			file="navbar.jsp"%></div>
@@ -33,12 +44,16 @@
 			<div class="cards col-3 text-center">
 				<i class="fa-solid fa-user-doctor fa-3x" style="color: #fff;"></i> <br>
 				<h5>Doctor</h5>
-				<p>109</p>
+				<p></p>
 			</div>
 			<div class="cards col-3 text-center">
 				<i class="fa-solid fa-calendar-check fa-3x" style="color: #fff;"></i>
 				<h5>Total Appointment</h5>
-				<p>906</p>
+				<p>
+					<%
+					dao.countAppointmentByDoctorId(d.getId());
+					%>
+				</p>
 			</div>
 		</div>
 	</div>

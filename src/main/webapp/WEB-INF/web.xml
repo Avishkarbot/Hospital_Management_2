@@ -109,4 +109,24 @@
     <servlet-name>AppointmentServlet</servlet-name>
     <url-pattern>/AppointmentServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateStatus</display-name>
+    <servlet-name>UpdateStatus</servlet-name>
+    <servlet-class>com.doctor.servlet.UpdateStatus</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateStatus</servlet-name>
+    <url-pattern>/UpdateStatus</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>changePassword</display-name>
+    <servlet-name>changePassword</servlet-name>
+    <servlet-class>com.user.servlet.changePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>changePassword</servlet-name>
+    <url-pattern>/changePassword</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -13,6 +13,11 @@
 <title>Insert title here</title>
 <%@include file="../component/allCSS.jsp"%>
 <%@include file="../component/adminindexCSS.jsp"%>
+<style>
+body {
+	overflow-y: hidden;
+}
+</style>
 </head>
 <body>
 	<div
@@ -67,8 +72,8 @@
 				<label class="form-label fw-bold">Password</label> <input required
 					name="password" type="password" class="form-control">
 			</div>
-			<div>
-				<button type="submit" class="btn btn-primary col-12 mt-4 " style="background: linear-gradient(to top left, #28b487, #7dd56f);">Submit</button>
+			<div class="col-12 text-center">
+				<button type="submit" class="btn btn-primary col-5 mt-4 " style="background: linear-gradient(to top left, #28b487, #7dd56f);">Submit</button>
 			</div>
 		</form>
 	</div>

@@ -18,7 +18,7 @@ public class UserLogout extends HttpServlet {
 
 		HttpSession session =req.getSession();
 		session.removeAttribute("userObj");
-		session.setAttribute("succMsg", "User Logout Successfully ");
+		session.setAttribute("succUserLogout", "User Logout Successfully ");
 		resp.sendRedirect("user_login.jsp");
 
 	}
